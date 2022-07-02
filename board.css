@@ -1,0 +1,67 @@
+.mainContainer2 {
+  position: relative;
+  background-image: url(./img/pexels-olia-danilevich-5088017.jpg);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+
+.sideBar {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  width: 140px;
+  height: 100vh;
+  background-color: rgba(22, 22, 156, 0.842);
+  padding-left: 20px;
+  padding-top: 40px;
+  color: white;
+  font-weight: bold;
+}
+
+.logo {
+  height: 120px;
+  width: 120px;
+  z-index: 1;
+  margin-top: 50px;
+}
+.board {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.backlog {
+  margin-top: 20px;
+  cursor: pointer;
+}
+.addTask {
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.tasksContainer {
+  margin-left: 150px;
+  display: flex;
+  text-align: center;
+}
+.container-fluid2 {
+  width: 280px !important;
+  margin: 25px;
+}
+.container-fluid2 span {
+  font-weight: bold;
+}
+.boardCon {
+  height: 80vh;
+  background-color: rgba(128, 128, 128, 0.397);
+  border-radius: 10px;
+}
+.boardCon:hover {
+  box-shadow: 0px 0px 22px 22px rgba(74, 74, 74, 0.75);
+  -webkit-box-shadow: 0px 0px 22px 22px rgba(74, 74, 74, 0.75);
+  -moz-box-shadow: 0px 0px 22px 22px rgba(74, 74, 74, 0.75);
+}
