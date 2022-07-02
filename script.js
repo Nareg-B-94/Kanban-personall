@@ -1,3 +1,3 @@
-function goToAddTaskHTML() {
+function goToBoard() {
   window.location.href = "board.html";
 }

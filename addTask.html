@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Welcome to Kanban</title>
+    <link rel="stylesheet" href="index.html" />
+    <script src="script.js"></script>
+    <script src="board.js"></script>
+    <link rel="stylesheet" href="board.html" />
+    <script src="addTask.js"></script>
+    <link rel="stylesheet" href="addTask.css" />
+    <link rel="stylesheet" href="backlog.html" />
+    <script src="backlog.js"></script>
+    <link rel="stylesheet" href="fonts.css" />
+    <link rel="stylesheet" href="board.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="templates.js"></script>
+  </head>
+
+  <body onload="includeHTML(), render()">
+    <div class="navBar" w3-include-html="templates/navbar.html"></div>
+    <div class="mainContainer2">
+      <div class="sideBar">
+        <div class="logo"><img src="img/logo.png" alt="" /></div>
+        <div onclick="" class="board">Board</div>
+        <div onclick="" class="backlog">Back-Log</div>
+        <div onclick="goToAddTaskHTML()" class="addTask">Add a Task</div>
+      </div>
+      <div class="addTaskMainContainer">
+        <div class="headerContainer">
+          <h3>Add Task</h3>
+          <span>Learning Management System Project</span>
+        </div>
+        <div class="addTaskSection">
+          <div class="formValidation">
+            <form onsubmit="addTask(event)">
+              <div class="firstRow">
+                <div class="title">
+                  <span>TITLE</span>
+                  <input type="text" placeholder="Your title" />
+                </div>
+                <div class="dueDate">
+                  <span>DUE DATE</span>
+                  <input type="date" />
+                </div>
+              </div>
+              <div class="secondRow">
+                <div class="category">
+                  <span>CATEGORY</span>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option value="HR">HR</option>
+                    <option value="Sales">Sales</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Warehouse">Warehouse</option>
+                    <option value="Accounting">Accounting</option>
+                  </select>
+                </div>
+                <div class="urgency">
+                  <span>URGENCY</span>
+                  <select
+                    class="form-select"
+                    aria-label="Default select example"
+                  >
+                    <option value="High">High</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Low">Low</option>
+                  </select>
+                </div>
+              </div>
+              <div class="thirdRow">
+                <div class="description">
+                  <span>DESCRIPTION</span>
+                  <div class="form-floating">
+                    <textarea
+                      class="form-control"
+                      placeholder="Leave a comment here"
+                      id="floatingTextarea"
+                    ></textarea>
+                    <label for="floatingTextarea">Comment</label>
+                  </div>
+                </div>
+                <div class="assignedTo">
+                  <span>ASSIGNED TO</span>
+                  <div id="avatars" class="avatars"></div>
+                </div>
+              </div>
+              <div class="fourthRow">
+                <button id="cancelBtn" onclick="cancelTask()">CANCEL</button>
+                <button id="createBtn" onclick="createTheTask()">CREATE TASK</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
