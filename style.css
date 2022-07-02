@@ -1,11 +1,10 @@
 body {
   margin: 0;
+  font-size: 1.3em;
 }
 
 html {
   scroll-behavior: smooth;
-  font-family: "Arima Madurai";
-  font-size: 1.3em;
 }
 .mainContainer {
   height: 100vh;
@@ -58,13 +57,17 @@ html {
 }
 
 .clickToStartSection {
+  opacity: 0;
   display: flex;
   justify-content: center;
   margin-top: 20px;
+  animation: myAnim3 1s ease-in-out 2s 1 normal forwards;
 }
 
 .clickToStartSection button {
-  background-color: beige;
+  font-size: 1.2em;
+  background-color: rgb(184, 184, 164);
+  color: white;
   height: 50px;
   width: 150px;
   border-radius: 8px;
@@ -77,8 +80,21 @@ html {
   height: 50px;
   width: 150px;
   border-radius: 8px;
+  color: black;
+  background-color: darkgray;
 
   box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
   -webkit-box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
   -moz-box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
+}
+@keyframes myAnim3 {
+  0% {
+    opacity: 0;
+    transform: translateX(250px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
