@@ -1,11 +1,11 @@
 body {
-  font-family: "Arima Madurai";
-  font-size: 1.3em;
   margin: 0;
 }
 
 html {
   scroll-behavior: smooth;
+  font-family: "Arima Madurai";
+  font-size: 1.3em;
 }
 .mainContainer {
   height: 100vh;
@@ -36,22 +36,49 @@ html {
 }
 
 .welcomingText {
-    opacity: 0;
+  opacity: 0;
   color: white;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding-top: 40px;
-  animation: myAnim2 1s ease-in-out 1s 1 normal forwards;}
+  animation: myAnim2 1s ease-in-out 1s 1 normal forwards;
+}
 
 @keyframes myAnim2 {
-	0% {
-		opacity: 0;
-		transform: translateX(-250px);
-	}
+  0% {
+    opacity: 0;
+    transform: translateX(-250px);
+  }
 
-	100% {
-		opacity: 1;
-		transform: translateX(0);
-	}
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.clickToStartSection {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.clickToStartSection button {
+  background-color: beige;
+  height: 50px;
+  width: 150px;
+  border-radius: 8px;
+  box-shadow: 24px 31px 37px -6px rgba(0, 0, 0, 0.46);
+  -webkit-box-shadow: 24px 31px 37px -6px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: 24px 31px 37px -6px rgba(0, 0, 0, 0.46);
+}
+
+.clickToStartSection :hover {
+  height: 50px;
+  width: 150px;
+  border-radius: 8px;
+
+  box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
+  -webkit-box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
+  -moz-box-shadow: 24px 31px 37px -9px rgba(255, 255, 255, 0.46);
 }
