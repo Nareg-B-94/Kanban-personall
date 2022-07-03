@@ -45,21 +45,28 @@
         </div>
         <div class="addTaskSection">
           <div class="formValidation">
-            <form onsubmit="addTask(event)">
+            <form onsubmit="createTheTask(event)">
               <div class="firstRow">
                 <div class="title">
                   <span>TITLE</span>
-                  <input type="text" placeholder="Your title" />
+                  <input
+                    required minlength="5"
+                    id="title"
+                    type="text"
+                    placeholder="Your title"
+                  />
                 </div>
                 <div class="dueDate">
                   <span>DUE DATE</span>
-                  <input type="date" />
+                  <input required id="datePicker" type="date" />
                 </div>
               </div>
               <div class="secondRow">
                 <div class="category">
                   <span>CATEGORY</span>
                   <select
+                    required
+                    id="category"
                     class="form-select"
                     aria-label="Default select example"
                   >
@@ -73,6 +80,8 @@
                 <div class="urgency">
                   <span>URGENCY</span>
                   <select
+                    required
+                    id="urgency"
                     class="form-select"
                     aria-label="Default select example"
                   >
@@ -87,6 +96,8 @@
                   <span>DESCRIPTION</span>
                   <div class="form-floating">
                     <textarea
+                      required minlength="8"
+                      id="description"
                       class="form-control"
                       placeholder="Leave a comment here"
                       id="floatingTextarea"
@@ -101,7 +112,7 @@
               </div>
               <div class="fourthRow">
                 <button id="cancelBtn" onclick="cancelTask()">CANCEL</button>
-                <button id="createBtn" onclick="createTheTask()">CREATE TASK</button>
+                <button id="createBtn">CREATE TASK</button>
               </div>
             </form>
           </div>
