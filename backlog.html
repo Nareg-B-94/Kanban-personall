@@ -1,18 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <link rel="stylesheet" href="index.html" />
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="board.html" />
+    <link rel="stylesheet" href="board.css" />
+    <script src="board.js"></script>
+    <link rel="stylesheet" href="addTask.html" />
+    <script src="addTask.js"></script>
+    <link rel="stylesheet" href="addTask.css" />
+    <link rel="stylesheet" href="backlog.css" />
+    <script src="backlog.js"></script>
+    <link rel="stylesheet" href="fonts.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <script src="templates.js"></script>
+    <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
     <script type="text/javascript">
       setURL(
         "https://www.nareg-berberian.developerakademie.net/smallest_backend_ever"
       );
     </script>
+  </head>
 
-</head>
-<body onload="init()">
-
-</body>
+  <body
+    onload="init(), includeHTML(), setTimeout(() => {
+    addBackLog()
+  }, 300);"
+  >
+    <div class="navBar" w3-include-html="templates/navbar.html"></div>
+    <div class="mainContainer2">
+      <div class="sideBar">
+        <div class="logo"><img src="img/logo.png" alt="" /></div>
+        <div onclick="goToBoard()" class="board">Board</div>
+        <div onclick="goToBacklog()" class="backlog">Back-Log</div>
+        <div onclick="goToAddTaskHTML()" class="addTask">Add a Task</div>
+      </div>
+      <div class="backlogContainer">
+        <div class="container-fluid">
+          <div class="headerContainer">
+            <h3>Back-Log</h3>
+            <h4>Here you can see when and by whom each Task was created*.</h4>
+            <span>Learning Management System Project</span>
+          </div>
+          <div class="backlogs">
+            <div class="createdTasksHeader">
+              <span class="boldFonts">ASSIGNED TO</span>
+              <span class="boldFonts">CATEGORY</span>
+              <span class="boldFonts">DETAILS</span>
+            </div>
+            <!-- here the tasks will be injected -->
+            <div id="BACKLOG" class="createdTask2">
+              <div id="container1" class="container1">
+                <div class="avatarBkLg">avatar</div>
+                <div class="infoBkLg">
+                  <div class="nameBkLg boldFonts">name name name name</div>
+                <div class="emailBkLg">Email@example company.com</div>
+                </div>
+              </div>
+              <div id="container2" class="container2 boldFonts">Marketing</div>
+              <div id="container3" class="container3 boldFonts">details</div>
+            </div>
+            <!-- double for example -->
+            <div class="createdTask2">
+              <div class="urgencyColor">a</div>
+              <div class="container1">
+                <div class="avatarBkLg">avatar</div>
+                <div class="infoBkLg">
+                  <div class="nameBkLg">name name name name</div>
+                <div class="emailBkLg">Email@example company.com</div>
+                <div class="createdAt">createdAt</div>
+                </div>
+              </div>
+              <div class="container2">Marketing</div>
+              <div class="container3">details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details details</div>
+            </div>
+            <!-- till here the tasks will be injected -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>

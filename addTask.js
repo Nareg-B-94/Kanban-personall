@@ -42,6 +42,12 @@ async function init() {
   Users = JSON.parse(backend.getItem('users')) || [];
 };
 
+// //add a user
+// async function addUser() {
+//   users.push('John);
+//     await backend.setItem('users', JSON.stringify(users));
+// }
+
 
 //Renders the Avatars
 function render() {

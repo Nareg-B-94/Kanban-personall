@@ -1,0 +1,85 @@
+.boldFonts{
+    font-weight: bold;
+}
+
+.backlogContainer {
+  margin-left: 150px;
+}
+.backlogs {
+  padding: 20px;
+}
+.createdTasksHeader {
+  display: flex;
+  justify-content: space-around;
+}
+.createdTask2 {
+  margin-top: 10px;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  background-color: rgba(133, 133, 133, 0.479);
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.urgencyColor {
+  z-index: +1;
+  position: absolute;
+  background-color: aqua;
+  border-top-left-radius: 12px;
+  border-bottom-left-radius: 12px;
+  height: 100px;
+  padding-left: 10px;
+  left: 0;
+}
+
+.container1 {
+  display: flex;
+  width: 350px;
+}
+
+.avatarBkLg {
+  margin: 20px;
+}
+
+.infoBkLg {
+  margin: 20px;
+}
+
+.emailBkLg {
+  color: blue;
+}
+
+.urgencyColorRed {
+  border-left: solid red 15px;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+
+}
+.urgencyColorBlue {
+  border-left: solid blue 15px;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.urgencyColorOrange {
+  border-left: solid orange 15px;
+  height: 100%;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+.container2 {
+  margin-right: 50px;
+  margin-left: 10px;
+  width: 150px;
+}
+.container3 {
+  height: 80px;
+  width: 300px;
+  margin-right: 20px;
+  word-wrap: normal;
+  overflow-x: auto;
+}
