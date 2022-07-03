@@ -21,15 +21,26 @@ let users = [
   }
 ];
 
-let selectedUsers = [];
+
 let tasks = []; //The JSON that will be transported between the pages.
 
+let selectedUsers = [];
 let title;
 let date;
 let category;
 let urgency;
 let description;
 let createdAt;
+let Users = [];
+
+
+
+
+//initiates the backend server
+async function init() {
+  await downloadFromServer();
+  Users = JSON.parse(backend.getItem('users')) || [];
+};
 
 
 //Renders the Avatars
@@ -44,15 +55,20 @@ function render() {
   }
 }
 
+
 //Selects and filters and pushes the avatar to the Array
 function selectedAvatar(i) {
+  let create = document.getElementById('createBtn');
   let selectedUser = document.getElementById("user-" + i);
   selectedUser.classList.toggle("avatarSelected");
+
   if (selectedUsers.includes(users[i])) {
     selectedUsers = selectedUsers.filter((a) => a != users[i]);
   } else {
     selectedUsers.push(users[i]);
   }
+  create.classList.remove('disabled');
+  create.disabled = false;
 }
 
 //cancels the Task and gets back to board.html
@@ -67,6 +83,7 @@ function saveValues() {
   category = document.getElementById('category').value;
   urgency = document.getElementById('urgency').value;
   description = document.getElementById('description').value;
+
 };
 
 //Creates the Task and adds it to the board.html
@@ -76,19 +93,29 @@ function createTheTask(event) {
   createdAt = new Date(time).toLocaleString(); //uploads the date in a text form
   event.preventDefault();
   tasks.push({
-    title, date, category, urgency, description
+    title, date, category, urgency, description, createdAt, selectedUsers
   })
   console.log(tasks);
   clearInputFields();
 
+
 };
 
 
-function clearInputFields(){
+function clearInputFields() {
   saveValues();
-  title.value=``;
-  date.value=``;
-  category.value=``;
-  urgency.value=``;
-  description.value=``;
+  title.value = ``;
+  date.value = ``;
+  category.value = ``;
+  urgency.value = ``;
+  description.value = ``;
 }
+
+
+function goToBoard() {
+  window.location.href = "board.html";
+};
+
+function goToBacklog() {
+  window.location.href = "backlog.html";
+};
