@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to Kanban</title>
+    <script src="mini_backend.js"></script>
     <link rel="stylesheet" href="index.html" />
     <script src="script.js"></script>
     <link rel="stylesheet" href="board.css" />
@@ -27,16 +28,17 @@
       crossorigin="anonymous"
     ></script>
     <script src="templates.js"></script>
-    <script src="./mini_backend.js"></script>
-    <script type="text/javascript">
+
+    <!-- <script src="./mini_backend.js"></script> -->
+    <!-- <script type="text/javascript">
       setURL(
         "https://www.nareg-berberian.developerakademie.net/smallest_backend_ever"
       );
-    </script>
+    </script> -->
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
 
   </head>
-  <body onload="init(), includeHTML()">
+  <body onload="initBoard(), includeHTML()">
     <div class="navBar" w3-include-html="templates/navbar.html"></div>
     <div class="mainContainer2">
       <div class="sideBar">

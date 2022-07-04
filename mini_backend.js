@@ -1,6 +1,8 @@
 let jsonFromServer = {};
 let BASE_SERVER_URL;
-
+setURL(
+    "https://www.nareg-berberian.developerakademie.net/smallest_backend_ever"
+);
 const backend = {
     setItem: function(key, item) {
         jsonFromServer[key] = item;

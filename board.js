@@ -11,8 +11,6 @@ function goToBacklog() {
 };
 
 
-
-async function init() {
-  await downloadFromServer();
-  users = JSON.parse(backend.getItem('users')) || [];
+async function initBoard(){
+await init();
 };

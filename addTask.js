@@ -39,7 +39,7 @@ let Users = [];
 //initiates the backend server
 async function init() {
   await downloadFromServer();
-  Users = JSON.parse(backend.getItem('users')) || [];
+  tasks = backend.getItem("tasks") || [];
 };
 
 // //add a user
@@ -93,7 +93,7 @@ function saveValues() {
 };
 
 //Creates the Task and adds it to the board.html
-function createTheTask(event) {
+async function createTheTask(event) {
   saveValues();
   let time = new Date().getTime();
   createdAt = new Date(time).toLocaleString(); //uploads the date in a text form
@@ -102,8 +102,11 @@ function createTheTask(event) {
     title, date, category, urgency, description, createdAt, selectedUsers
   })
   console.log(tasks);
+  await backend.setItem("tasks", tasks); //saves the Tasks JSON in backend
   clearInputFields();
-
+  // setTimeout(() => {
+  //   window.location.href = "board.html";
+  // }, 3000);
 
 };
 

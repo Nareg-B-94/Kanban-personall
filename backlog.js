@@ -1,10 +1,15 @@
+async function initBacklog(){
+    await init();
+    addBackLog();
+}
+
+
 function addBackLog() {
     let backlog = document.getElementById('BACKLOG');
-    backlog.innerHTML = ``;
+    backlog.innerHTML = '';
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
         backlog.innerHTML +=`
-
         <div id="BACKLOG" class="createdTask2">
               <div id="container1" class="container1">
                 <div class="avatarBkLg">${task['selectedUsers'][0]['picture']}</div>
@@ -18,8 +23,6 @@ function addBackLog() {
               <div id="container2" class="container2 boldFonts">${task['category']}</div>
               <div id="container3" class="container3 boldFonts">${task['description']}</div>
             </div>
-
-
         `;
 
         let bgColor = document.getElementById('container1' + i);
