@@ -104,9 +104,9 @@ async function createTheTask(event) {
   console.log(tasks);
   await backend.setItem("tasks", tasks); //saves the Tasks JSON in backend
   clearInputFields();
-  // setTimeout(() => {
-  //   window.location.href = "board.html";
-  // }, 3000);
+  setTimeout(() => {
+    window.location.href = "board.html";
+  }, 300);
 
 };
 

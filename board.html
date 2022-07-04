@@ -30,6 +30,7 @@
     <script src="templates.js"></script>
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   </head>
+
   <body onload="initBoard(), includeHTML(), updateHTML()">
     <div class="navBar" w3-include-html="templates/navbar.html"></div>
     <div class="mainContainer2">
@@ -45,10 +46,10 @@
           <div id="toDoCon" class="boardCon">
             <div
               onclick="fullScreenTask()"
-              class="createdTask"
+
               id="boardConToDo">
 
-              <div class="nameSpan">
+              <!-- <div class="nameSpan">
                 name
               </div>
               <br>
@@ -74,26 +75,26 @@
               <div class="urgencySpan">high</div>
               <br />
               <div class="createdAtSpan">xx/xx/xxxx</div>
-              <br />
+              <br /> -->
             </div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>IN PROGRESS</span>
           <div class="boardCon">
-            <div class="createdTask" id="boardConInProgress">test2</div>
+            <div class="" id="boardConInProgress"></div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>TESTING</span>
           <div class="boardCon">
-            <div class="createdTask" id="boardConTesting">test3</div>
+            <div class="" id="boardConTesting"></div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>DONE</span>
           <div class="boardCon">
-            <div class="createdTask" id="boardConDone">test4</div>
+            <div class="" id="boardConDone"></div>
           </div>
         </div>
       </div>
