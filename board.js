@@ -11,6 +11,12 @@ function goToBacklog() {
 };
 
 
-async function initBoard(){
-await init();
-};
+// async function initBoard(){
+// await init();
+// await updateTasks();
+//
+// };
+
+function updateHTML(){};
+
+function fullScreenTask(){};
