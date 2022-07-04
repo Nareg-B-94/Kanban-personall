@@ -7,22 +7,14 @@
 }
 .backlogs {
   padding: 20px;
+  height: 70vh;
+  overflow-y: auto;
 }
 .createdTasksHeader {
   display: flex;
   justify-content: space-around;
 }
-.createdTask2 {
-  margin-top: 10px;
-  align-items: center;
-  border-radius: 10px;
-  text-align: center;
-  position: relative;
-  background-color: rgba(133, 133, 133, 0.479);
-  height: 100px;
-  display: flex;
-  justify-content: space-between;
-}
+
 .urgencyColor {
   z-index: +1;
   position: absolute;
@@ -34,10 +26,19 @@
   left: 0;
 }
 
-.container1 {
+.firstContainer {
   display: flex;
   width: 350px;
+  justify-content: space-between;
+
 }
+
+.test{
+  display: flex;
+
+}
+
+
 
 .avatarBkLg {
   margin: 20px;
@@ -71,12 +72,12 @@
   border-bottom-left-radius: 10px;
 }
 
-.container2 {
+.secondContainer {
   margin-right: 50px;
   margin-left: 10px;
   width: 150px;
 }
-.container3 {
+.thirdContainer {
   height: 80px;
   width: 300px;
   margin-right: 20px;
@@ -94,3 +95,31 @@
   border-radius: 100%;
   width: 60px;
 }
+
+.medzCon{
+  margin-top: 10px;
+  align-items: center;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+  background-color: rgba(133, 133, 133, 0.479);
+  height: 110px;
+  display: flex;
+
+}
+
+.arachinCon{
+
+}
+.yegrortCon{
+  margin-left: 80px !important;
+}
+
+.yerortCon {
+  margin-left: 40px !important;
+  height: 100px !important;
+  overflow-y: auto;
+  word-wrap: break-word;
+  width: 100% !important;
+}
+
