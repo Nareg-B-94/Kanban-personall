@@ -56,7 +56,7 @@ function render() {
   for (let i = 0; i < users.length; i++) {
     const user = users[i]['picture'];
     avatars.innerHTML += `
-        <img id="user-${i}" onclick="selectedAvatar(${i})" class="avatarPic" src="img/${user}" alt="">
+        <img id="user-${i}" onclick="selectedAvatar(${i})" class="avatarPic" src="../img/${user}" alt="">
         `;
   }
 }
@@ -104,9 +104,9 @@ async function createTheTask(event) {
   console.log(tasks);
   await backend.setItem("tasks", tasks); //saves the Tasks JSON in backend
   clearInputFields();
-  // setTimeout(() => {
-  //   window.location.href = "board.html";
-  // }, 3000);
+  setTimeout(() => {
+    window.location.href = "board.html";
+  }, 3000);
 
 };
 
