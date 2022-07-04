@@ -7,10 +7,10 @@ function addBackLog() {
 
         <div id="BACKLOG" class="createdTask2">
               <div id="container1" class="container1">
-                <div class="avatarBkLg">avatar</div>
+                <div class="avatarBkLg">${task['selectedUsers'][0]['picture']}</div>
                 <div class="infoBkLg">
-                  <div class="nameBkLg boldFonts">name name name name</div>
-                <div class="emailBkLg">Email@example company.com</div>
+                  <div class="nameBkLg boldFonts">${task['selectedUsers'][0]['name']}</div>
+                <div class="emailBkLg">${task['selectedUsers'][0]['email']}</div>
                 <div class="createdAt">${task['createdAt']}</div>
                 </div>
                 </div>
