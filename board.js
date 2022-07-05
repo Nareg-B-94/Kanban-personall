@@ -10,6 +10,8 @@ function goToBacklog() {
   window.location.href = "backlog.html";
 };
 
+let todos = [{}];
+
 
 async function initBoard() {
   await init();
@@ -47,12 +49,51 @@ async function initBoard() {
   }
 
 
-  // await updateTasks();
+// await updateTasks();
 
 
 
 };
 
-// function updateHTML(){};
+function updateHTML(){};
 
-// function fullScreenTask(){};
+function fullScreenTask(x){
+  document.getElementById('fullscreenCon').classList.remove('displayNone');
+  let fullscreen = document.getElementById('fullScreen2');
+  const task = tasks[x]
+  fullscreen.innerHTML ='';
+  fullscreen.innerHTML += `
+  <div id="fullscreen${x}" class="fullscreen">
+            <div id="boardConToDoFullScreen">
+              <div class="firstRowFullScreen">
+                <img src="img/a1.PNG" alt="" />
+                <span class="nameFullScreen"> ${task.selectedUsers[0]['name']}</span>
+              </div>
+              <div class="secondRowFullScreen">
+                <div class="descriFullScreen">
+                  ${task.description}
+                </div>
+              </div>
+              <div class="thirdRowFullScreen">
+                <div class="contentThirdRowFullScreen">
+                  <div class="content1">Urgecy&nbsp;&nbsp;: ${task.urgency}  </div>
+                  <div class="content2">Due Date&nbsp;&nbsp;: ${task.date} </div>
+                </div>
+              </div>
+              <div class="fouthRowFullScreen">created at&nbsp;&nbsp;: ${task.createdAt}</div>
+            </div>
+          </div>
+  `
+  let bgColor = document.getElementById('fullscreen' + x);
+  let urgencyCol = task['urgency'];
+
+  if (urgencyCol == "High") {
+    bgColor.classList.add('urgencyColorRed');
+  };
+  if (urgencyCol == "Medium") {
+    bgColor.classList.add('urgencyColorOrange');
+  }; if (urgencyCol == "High") {
+    bgColor.classList.add('urgencyColorOrange');
+  };
+
+};

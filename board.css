@@ -1,3 +1,7 @@
+body{
+  font-family: 'Arima Madurai' !important;
+}
+
 .mainContainer2 {
   position: relative;
   background-image: url(./img/pexels-olia-danilevich-5088017.jpg);
@@ -109,3 +113,106 @@
     background: linear-gradient(transparent, #3b0223);
     border-radius: 8px;
 }
+
+.fullscreenCon {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-height: 90vh ;
+  min-width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullscreen{
+  color: white;
+  z-index: 11;
+  position: absolute;
+background-color: rgba(0, 0, 0, 0.421);
+  height: 560px !important;
+  width: 760px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.firstRowFullScreen{
+  display: flex;
+  justify-content: space-around;
+}
+
+.firstRowFullScreen img{
+border-radius: 100%;
+height: 140px;
+width: 140px
+}
+
+.nameFullScreen {
+
+  width: 300px;
+  font-weight: bold;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.3em;
+
+}
+
+.descriFullScreen {
+font-size: 1.2em;
+  margin-top: 20px;
+  height: 250px;
+  overflow-y: auto;
+}
+.thirdRowFullScreen {
+  border: 3px black dashed;
+  margin-top: 20px;
+}
+
+.contentThirdRowFullScreen {
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+.content1{
+  margin: 20px;
+}
+
+.content2 {
+  margin: 20px;
+}
+
+.fouthRowFullScreen {
+
+  position: absolute;
+  bottom: 10px;
+  left: 20px;
+}
+
+.urgencyColorRed {
+  border-left: solid red 20px;
+  border-right: solid red 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.urgencyColorBlue {
+  border-left: solid blue 20px;
+  border-right: solid blue 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+.urgencyColorOrange {
+  border-left: solid orange 20px;
+  border-right: solid orange 15px;
+  border-top-left-radius: 20px;
+  border-bottom-left-radius: 20px;
+}
+
+.displayNone {
+  display: none;
+}
+
+

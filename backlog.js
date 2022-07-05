@@ -6,10 +6,10 @@ async function initBacklog(){
 
 function addBackLog() {
     let backlog = document.getElementById('BACKLOG');
-    backlog.innerHTML = ``;
+    backlog2.innerHTML = ``;
     for (let i = 0; i < tasks.length; i++) {
         const task = tasks[i];
-        backlog.innerHTML +=`
+        backlog1.innerHTML +=`
 <div id="firstContainer${i}" class="medzCon">
                 <div  class="container-fluid arachinCon avatarBkLg"><img src="img/${task['selectedUsers'][0] ['picture']}">  &nbsp; ${task['selectedUsers'][0]['name']} <br> ${task['selectedUsers'][0]['email']}  </div>
                 <div class="container-fluid yegrortCon">${task['category']} <br> ${task['createdAt']} </div>

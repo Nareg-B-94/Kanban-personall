@@ -40,61 +40,65 @@
         <div onclick="goToBacklog()" class="backlog">Back-Log</div>
         <div onclick="goToAddTaskHTML()" class="addTask">Add a Task</div>
       </div>
+
       <div class="tasksContainer">
+        <div id="fullscreenCon" class="fullscreenCon displayNone">
+          <div id="fullscreen" class="fullscreen urgencyColorOrange">
+            <div id="fullScreen2">
+              <div id="boardConToDoFullScreen">
+                <div class="firstRowFullScreen">
+                  <img src="img/a1.PNG" alt="" />
+                  <span class="nameFullScreen"> bla bla</span>
+                </div>
+                <div class="secondRowFullScreen">
+                  <div class="descriFullScreen">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut
+                    non corporis odit repellendus, obcaecati aliquam maiores
+                    rerum animi sequi quae impedit maxime quod reprehenderit
+                    doloribus! Fugiat officia maiores eos consectetur?
+                  </div>
+                </div>
+                <div class="thirdRowFullScreen">
+                  <div class="contentThirdRowFullScreen">
+                    <div class="content1">Urgecy&nbsp;&nbsp;:</div>
+                    <div class="content2">Due Date&nbsp;&nbsp;:</div>
+                  </div>
+                </div>
+                <div class="fouthRowFullScreen">created at&nbsp;&nbsp;:</div>
+              </div>
+            </div>
+          </div>
+        </div>
         <div class="container-fluid2">
           <span>TO DO</span>
           <div id="toDoCon" class="boardCon">
-            <div
-              onclick="fullScreenTask()"
-
-              id="boardConToDo">
-
-              <!-- <div class="nameSpan">
-                name
-              </div>
-              <br>
-              <div class="descSpan">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Exercitationem a, harum dolor officiis unde amet corrupti
-                voluptate, explicabo ab eveniet cupiditate, saepe asperiores!
-                Quasi, saepe odio consequuntur ea enim reiciendis, eveniet
-                voluptate perferendis minima dolorem ullam? Atque placeat
-                similique voluptates mollitia consequatur exercitationem
-                explicabo amet eveniet ratione? Accusamus, possimus, magnam
-                illo, animi placeat suscipit tenetur ipsum id non nesciunt
-                libero reprehenderit. Excepturi odio beatae quibusdam quia
-                autem! Id dolorum necessitatibus odio possimus? Non similique
-                accusamus temporibus repudiandae recusandae assumenda deserunt
-                quasi nemo debitis repellat provident, earum tempore quis
-                ducimus consectetur natus nulla laudantium rerum. Accusamus
-                earum eius vero ab numquam.
-              </div>
-              <br />
-              <div class="dueDateSpan">xx/xx/xxxx</div>
-              <br />
-              <div class="urgencySpan">high</div>
-              <br />
-              <div class="createdAtSpan">xx/xx/xxxx</div>
-              <br /> -->
-            </div>
+            <div onclick="fullScreenTask('x')" id="boardConToDo"></div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>IN PROGRESS</span>
           <div class="boardCon">
-            <div class="" id="boardConInProgress"></div>
+            <div
+              onclick="fullScreenTask('x')"
+              class=""
+              id="boardConInProgress"
+            ></div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>TESTING</span>
           <div class="boardCon">
-            <div class="" id="boardConTesting"></div>
+            <div
+              onclick="fullScreenTask('x')"
+              class=""
+              id="boardConTesting"
+            ></div>
           </div>
         </div>
         <div class="container-fluid2">
           <span>DONE</span>
           <div class="boardCon">
-            <div class="" id="boardConDone"></div>
+            <div onclick="fullScreenTask('x')" class="" id="boardConDone"></div>
           </div>
         </div>
       </div>
