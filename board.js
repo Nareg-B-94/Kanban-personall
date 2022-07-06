@@ -20,7 +20,7 @@ async function initBoard() {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     boardCon.innerHTML += `
-    <div onclick="fullScreenTask(${i})"
+    <div onclick="fullScreenTask(${i}); event.stopPropagation()"
           class="createdTask"
             id="boardConToDo">
               <div class="nameSpan">
@@ -68,8 +68,10 @@ function fullScreenTask(x){
               <div class="firstRowFullScreen">
                 <img src="img/${task['selectedUsers'][0]['picture']}">
                 <span class="nameFullScreen"> ${task.selectedUsers[0]['name']}</span>
+                <button class="closeBtn" onclick="closeFullScreen()">X</button>
               </div>
               <div class="secondRowFullScreen">
+              <span class="titleSpanFullScreen">${task.title}</span>
                 <div class="descriFullScreen">
                   ${task.description}
                 </div>
@@ -95,8 +97,11 @@ function fullScreenTask(x){
   }; if (urgencyCol == "High") {
     bgColor.classList.add('urgencyColorOrange');
   };
+  event.stopPropagation()
 
-
-
-  x.stopPropagation();
 };
+
+function closeFullScreen(){
+  document.getElementById('fullscreenCon').classList.add('displayNone');
+};
+

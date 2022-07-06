@@ -137,6 +137,8 @@ background-color: rgba(0, 0, 0, 0.421);
   width: 760px;
   padding: 20px;
   border-radius: 10px;
+
+
 }
 
 .firstRowFullScreen{
@@ -166,6 +168,7 @@ font-size: 1.2em;
   margin-top: 20px;
   height: 250px;
   overflow-y: auto;
+  overflow-x: hidden;
 }
 .thirdRowFullScreen {
   border: 3px black dashed;
@@ -197,22 +200,68 @@ font-size: 1.2em;
   border-right: solid red 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+      top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 .urgencyColorBlue {
   border-left: solid blue 20px;
   border-right: solid blue 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+      top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
 }
 .urgencyColorOrange {
   border-left: solid orange 20px;
   border-right: solid orange 15px;
   border-top-left-radius: 20px;
   border-bottom-left-radius: 20px;
+      top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+
 }
 
 .displayNone {
   display: none;
+}
+
+.titleSpanFullScreen{
+  font-size: 1.3em;
+  font-weight: bold;
+  margin: 20px;
+  border-bottom: dashed 5px #3b0223;
+}
+
+.closeBtn {
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+  font-weight: bold;
+
+
+}
+.closeBtn:hover {
+  font-size: 1.1em;
+  height: 50px;
+  width: 50px;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-weight: bold;
+  background-color: rgba(102, 26, 243, 0.993);
+
 }
 
 
