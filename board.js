@@ -1,3 +1,5 @@
+
+// Quick navigation functions
 function goToAddTaskHTML() {
   window.location.href = "addTask.html";
 }
@@ -10,18 +12,29 @@ function goToBacklog() {
   window.location.href = "backlog.html";
 };
 
-let todos = [{}];
+// Closes the fullscreen opened Task
+function closeFullScreen(){
+  document.getElementById('fullscreenCon').classList.add('displayNone');
+};
 
+// Global Variables for Drag and Drop
+let todos = document.getElementById('boardConToDo');
+let progresses = document.getElementById('boardConInProgress');
+let testings = document.getElementById('boardConTesting');
+let dones = document.getElementById('boardConDone');
+let currentDraggedTask;
 
+//Initializes the rendering of the Tasks from the Server and displays them
 async function initBoard() {
   await init();
+
   let boardCon = document.getElementById('boardConToDo');
   boardCon.innerHTML = '';
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     boardCon.innerHTML += `
     <div onclick="fullScreenTask(${i}); event.stopPropagation()"
-          class="createdTask"
+          draggable="true" ondragstart="startDragging(${i})" class="createdTask"
             id="boardConToDo">
               <div class="nameSpan">
                 To: &nbsp; ${task.selectedUsers[0]['name']} <br> <img src="img/${task['selectedUsers'][0]['picture']}">
@@ -43,20 +56,16 @@ async function initBoard() {
                 Created At: &nbsp;${task.createdAt}
               </div>
               <br/>
-    </div>
-    `
-
-  }
-
+    </div>  `
+  };
 
 // await updateTasks();
-
-
 
 };
 
 function updateHTML(){};
 
+//When a click on a Task card is done .. opens it as fullscreen and picks the right urgency color for it
 function fullScreenTask(x){
   document.getElementById('fullscreenCon').classList.remove('displayNone');
   let fullscreen = document.getElementById('fullScreenTwo');
@@ -86,6 +95,8 @@ function fullScreenTask(x){
             </div>
           </div>
   `
+
+  //urgencycolor checking process !
   let bgColor = document.getElementById('fullscreen' + x);
   let urgencyCol = task['urgency'];
 
@@ -98,11 +109,9 @@ function fullScreenTask(x){
   if (urgencyCol == "Low") {
     bgColor.classList.add('urgencyColorBlue');
   };
-  event.stopPropagation()
-
 };
 
-function closeFullScreen(){
-  document.getElementById('fullscreenCon').classList.add('displayNone');
-};
+
+
+
 

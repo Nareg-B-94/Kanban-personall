@@ -1,3 +1,13 @@
+//Quick navigation functions
+function goToBoard() {
+  window.location.href = "board.html";
+};
+
+function goToBacklog() {
+  window.location.href = "backlog.html";
+};
+
+
 let users = [
   {
     'picture': 'a1.PNG',
@@ -31,7 +41,8 @@ let category;
 let urgency;
 let description;
 let createdAt;
-let Users = [];
+let id;
+let position;
 
 
 
@@ -40,13 +51,9 @@ let Users = [];
 async function init() {
   await downloadFromServer();
   tasks = backend.getItem("tasks") || [];
+  counter = backend.getItem("counter") || 1;
 };
 
-// //add a user
-// async function addUser() {
-//   users.push('John);
-//     await backend.setItem('users', JSON.stringify(users));
-// }
 
 
 //Renders the Avatars
@@ -89,6 +96,8 @@ function saveValues() {
   category = document.getElementById('category').value;
   urgency = document.getElementById('urgency').value;
   description = document.getElementById('description').value;
+  position = 'todoFromAddTask';
+  id = counter;
 
 };
 
@@ -99,14 +108,16 @@ async function createTheTask(event) {
   createdAt = new Date(time).toLocaleString(); //uploads the date in a text form
   event.preventDefault();
   tasks.push({
-    title, date, category, urgency, description, createdAt, selectedUsers
-  })
+    title, date, category, urgency, description, createdAt, selectedUsers, id, position
+  });
   console.log(tasks);
   await backend.setItem("tasks", tasks); //saves the Tasks JSON in backend
+  counter++;
+  await backend.setItem("counter", counter);
   clearInputFields();
-  setTimeout(() => {
-    window.location.href = "board.html";
-  }, 300);
+  // setTimeout(() => {
+  //   window.location.href = "board.html";
+  // }, 200);
 
 };
 
@@ -121,10 +132,3 @@ function clearInputFields() {
 }
 
 
-function goToBoard() {
-  window.location.href = "board.html";
-};
-
-function goToBacklog() {
-  window.location.href = "backlog.html";
-};
