@@ -20,7 +20,7 @@ async function initBoard() {
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
     boardCon.innerHTML += `
-    <div onclick="fullScreenTask()"
+    <div onclick="fullScreenTask(${i})"
           class="createdTask"
             id="boardConToDo">
               <div class="nameSpan">
@@ -59,14 +59,14 @@ function updateHTML(){};
 
 function fullScreenTask(x){
   document.getElementById('fullscreenCon').classList.remove('displayNone');
-  let fullscreen = document.getElementById('fullScreen2');
+  let fullscreen = document.getElementById('fullScreenTwo');
   const task = tasks[x]
   fullscreen.innerHTML ='';
   fullscreen.innerHTML += `
   <div id="fullscreen${x}" class="fullscreen">
             <div id="boardConToDoFullScreen">
               <div class="firstRowFullScreen">
-                <img src="img/a1.PNG" alt="" />
+                <img src="img/${task['selectedUsers'][0]['picture']}">
                 <span class="nameFullScreen"> ${task.selectedUsers[0]['name']}</span>
               </div>
               <div class="secondRowFullScreen">
@@ -96,4 +96,7 @@ function fullScreenTask(x){
     bgColor.classList.add('urgencyColorOrange');
   };
 
+
+
+  x.stopPropagation();
 };
