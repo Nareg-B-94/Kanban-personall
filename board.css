@@ -132,7 +132,7 @@ body{
   color: white;
   z-index: 11;
   position: absolute;
-background-color: rgba(0, 0, 0, 0.421);
+background-color: rgba(0, 0, 0, 0.726);
   height: 560px !important;
   width: 760px;
   padding: 20px;
@@ -191,7 +191,7 @@ font-size: 1.2em;
 .fouthRowFullScreen {
 
   position: absolute;
-  bottom: 10px;
+  bottom: 0px;
   left: 20px;
 }
 

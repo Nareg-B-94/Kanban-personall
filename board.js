@@ -94,8 +94,9 @@ function fullScreenTask(x){
   };
   if (urgencyCol == "Medium") {
     bgColor.classList.add('urgencyColorOrange');
-  }; if (urgencyCol == "High") {
-    bgColor.classList.add('urgencyColorOrange');
+  };
+  if (urgencyCol == "Low") {
+    bgColor.classList.add('urgencyColorBlue');
   };
   event.stopPropagation()
 
