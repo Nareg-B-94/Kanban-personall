@@ -18,7 +18,10 @@ function closeFullScreen() {
 };
 
 // Global Variables for Drag and Drop
-let todos = document.getElementById('boardConToDo');
+
+setTimeout(() => {
+
+}, 10000);
 let progresses = document.getElementById('boardConInProgress');
 let testings = document.getElementById('boardConTesting');
 let dones = document.getElementById('boardConDone');
@@ -95,6 +98,8 @@ let currentDraggedTask;
 //Initializes the rendering of the Tasks from the Server and displays them
 async function initBoard() {
   await init();
+  let todos = document.getElementById('boardConToDo');
+
 
   // let boardCon = document.getElementById('boardConToDo');
   todos.innerHTML = '';
