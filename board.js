@@ -13,7 +13,7 @@ function goToBacklog() {
 };
 
 // Closes the fullscreen opened Task
-function closeFullScreen(){
+function closeFullScreen() {
   document.getElementById('fullscreenCon').classList.add('displayNone');
 };
 
@@ -24,18 +24,86 @@ let testings = document.getElementById('boardConTesting');
 let dones = document.getElementById('boardConDone');
 let currentDraggedTask;
 
+
+// ************************test*********************//
+
+// const draggables = document.querySelectorAll('draggable');
+// const containerToDO = document.getElementById('toDoCon');
+// const containerBoardCon = document.getElementById('boardCon');
+// const containerTestingCon = document.getElementById('testingCon');
+// const containerDoneCon = document.getElementById('doneCon');
+
+// draggables.forEach(draggable => {
+//   draggable.addEventListener('dragstart', () => {
+//     draggable.classList.add('draging')
+//   })
+// })
+
+
+
+// draggable.addEventListener('dragend', () => {
+//   draggables.classList.remove('draggin')
+// })
+
+
+
+// containerToDO.forEach(container => {
+//   container.addEventListener('dragover', e => {
+//     e.preventDefault()
+//     console.log('Drop!')
+//     const draggable = document.querySelecto('draggable')
+//     container.appendChild(draggable)
+//   })
+// });
+
+// containerBoardCon.forEach(container => {
+//   container.addEventListener('dragover', e => {
+//     e.preventDefault()
+//     console.log('Drop!')
+//     const draggable = document.querySelecto('draggable')
+//     container.appendChild(draggable)
+//   })
+// });
+// containerTestingCon.forEach(container => {
+//   container.addEventListener('dragover', e => {
+//     e.preventDefault()
+//     console.log('Drop!')
+//     const draggable = document.querySelecto('draggable')
+//     container.appendChild(draggable)
+//   })
+// });
+// containerDoneCon.forEach(container => {
+//   container.addEventListener('dragover', e => {
+//     e.preventDefault()
+//     console.log('Drop!')
+//     const draggable = document.querySelecto('draggable')
+//     container.appendChild(draggable)
+//   })
+// });
+
+// function getDragAfterElement(container, y) {
+//  const draggableElements = [...container.querySelectorAll('draggable: not(dragging)')]
+
+//  draggableElements.reduce()
+// }
+
+
+
+// ************************test*********************//
+
+
 //Initializes the rendering of the Tasks from the Server and displays them
 async function initBoard() {
   await init();
 
-  let boardCon = document.getElementById('boardConToDo');
-  boardCon.innerHTML = '';
+  // let boardCon = document.getElementById('boardConToDo');
+  todos.innerHTML = '';
   for (let i = 0; i < tasks.length; i++) {
     const task = tasks[i];
-    boardCon.innerHTML += `
+    todos.innerHTML += `
     <div onclick="fullScreenTask(${i}); event.stopPropagation()"
-          draggable="true" ondragstart="startDragging(${i})" class="createdTask"
-            id="boardConToDo">
+          draggable="true" ondragstart="startDragging()" class="createdTask draggable"
+            id="boardConToDo${i}">
               <div class="nameSpan">
                 To: &nbsp; ${task.selectedUsers[0]['name']} <br> <img src="img/${task['selectedUsers'][0]['picture']}">
               </div>
@@ -59,18 +127,25 @@ async function initBoard() {
     </div>  `
   };
 
-// await updateTasks();
+  await updateTasks();
 
 };
 
-function updateHTML(){};
+function updateTasks() {
+  let todo = tasks.filter(t => t['position'] == 'todoFromAddTask');
+  todos.innerHTML = "";
+  for (let i = 0; i < todo.length; i++) {
+    const task = todo[i];
+    todos.innerHTML += generateToDoHTML(task, i);
+  }
+};
 
 //When a click on a Task card is done .. opens it as fullscreen and picks the right urgency color for it
-function fullScreenTask(x){
+function fullScreenTask(x) {
   document.getElementById('fullscreenCon').classList.remove('displayNone');
   let fullscreen = document.getElementById('fullScreenTwo');
   const task = tasks[x]
-  fullscreen.innerHTML ='';
+  fullscreen.innerHTML = '';
   fullscreen.innerHTML += `
   <div id="fullscreen${x}" class="fullscreen">
             <div id="boardConToDoFullScreen">
@@ -110,6 +185,12 @@ function fullScreenTask(x){
     bgColor.classList.add('urgencyColorBlue');
   };
 };
+
+// function generateToDoHTML(task){
+//   return `
+
+//   `
+// }
 
 
 

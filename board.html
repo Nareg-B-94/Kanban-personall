@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon" />
   </head>
 
-  <body onload="initBoard(), includeHTML(), updateHTML()">
+  <body onload="initBoard(), includeHTML()">
     <div class="navBar" w3-include-html="templates/navbar.html"></div>
     <div class="mainContainer2">
       <div class="sideBar">
@@ -75,7 +75,7 @@
         </div>
         <div class="container-fluid2">
           <span>IN PROGRESS</span>
-          <div class="boardCon">
+          <div id="boardCon" class="boardCon">
             <div
               onclick="fullScreenTask()"
               class=""
@@ -85,7 +85,7 @@
         </div>
         <div class="container-fluid2">
           <span>TESTING</span>
-          <div class="boardCon">
+          <div id="testingCon" class="boardCon">
             <div
               onclick="fullScreenTask()"
               class=""
@@ -95,7 +95,7 @@
         </div>
         <div class="container-fluid2">
           <span>DONE</span>
-          <div class="boardCon">
+          <div id="doneCon" class="boardCon">
             <div onclick="fullScreenTask()" class="" id="boardConDone"></div>
           </div>
         </div>

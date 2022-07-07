@@ -115,9 +115,9 @@ async function createTheTask(event) {
   counter++;
   await backend.setItem("counter", counter);
   clearInputFields();
-  // setTimeout(() => {
-  //   window.location.href = "board.html";
-  // }, 200);
+  setTimeout(() => {
+    window.location.href = "board.html";
+  }, 200);
 
 };
 
